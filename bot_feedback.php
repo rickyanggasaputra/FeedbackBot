@@ -47,10 +47,10 @@ if (empty($rawInput)) {
     $infoRes = tgRequest("getWebhookInfo");
 
     header("Content-Type: text/plain; charset=utf-8");
-    echo "=== STATUS BOT FEEDBACK (PHP WEBHOOK) ===\n";
+    echo "=== WEBHOOK BOT STATUS ===\n";
     echo "Target URL   : " . $webhookUrl . "\n";
     echo "Set Webhook  : " . ($setRes["description"] ?? json_encode($setRes)) . "\n";
-    echo "URL Terdaftar: " . ($infoRes["result"]["url"] ?? "-") . "\n";
+    echo "Registered   : " . ($infoRes["result"]["url"] ?? "-") . "\n";
     echo "Pending Msg  : " . ($infoRes["result"]["pending_update_count"] ?? 0) . "\n";
     echo "Last Error   : " . ($infoRes["result"]["last_error_message"] ?? "No error (Active 24/7)") . "\n";
     exit;
